@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Encode | Stego App</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    form {
+      background: #161b22;
+      padding: 30px;
+      border-radius: 10px;
+      width: 360px;
+      box-shadow: 0 0 10px #000;
+    }
+    input, textarea, select, button {
+      width: 100%;
+      margin: 10px 0;
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+      font-family: inherit;
+    }
+    button {
+      background: #238636;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2ea043;
+    }
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h2>🧬 Encode (Hide Data in PNG)</h2>
+  <form method="post" enctype="multipart/form-data">
+    <label>Cover PNG:</label>
+    <input type="file" name="cover" accept=".png" required>
+
+    <label>Secret File:</label>
+    <input type="file" name="secret">
+
+    <label>Or Enter Secret Text:</label>
+    <textarea name="secret_text" rows="4" placeholder="Enter text to hide..."></textarea>
+
+    <label>Password:</label>
+    <input type="password" name="password" required>
+
+    <label>LSBs per Channel:</label>
+    <select name="lsb">
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+
+    <button type="submit">Encode & Download</button>
+  </form>
+  <p><a href="/">← Back to Home</a></p>
+</body>
+</html>

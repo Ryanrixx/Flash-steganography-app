@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Decode | Stego App</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    form {
+      background: #161b22;
+      padding: 30px;
+      border-radius: 10px;
+      width: 360px;
+      box-shadow: 0 0 10px #000;
+    }
+    input, select, button {
+      width: 100%;
+      margin: 10px 0;
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+      font-family: inherit;
+    }
+    button {
+      background: #da3633;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #f85149;
+    }
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h2>🔓 Decode (Extract Hidden Data)</h2>
+  <form method="post" enctype="multipart/form-data">
+    <label>Stego PNG:</label>
+    <input type="file" name="stego" accept=".png" required>
+
+    <label>Password:</label>
+    <input type="password" name="password" required>
+
+    <label>LSBs per Channel Used:</label>
+    <select name="lsb">
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+
+    <button type="submit">Decode & Download</button>
+  </form>
+  <p><a href="/">← Back to Home</a></p>
+</body>
+</html>
